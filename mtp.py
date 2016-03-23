@@ -63,8 +63,8 @@ class MtpBreaker(object):
         return self.key[bytepos]
 
     def keystats(self, printkey=False):
-        recovered = len([x for x in self.key if x > 0])
-        print "Key {0:3.2f}% recovered :)".format(float(recovered)/len(self.key)*100.0)
+        reco = float(len([x for x in self.key if x > 0]))
+        print "Key {0:3.2f}% recovered :)".format(reco / self.keylength*100.0)
         if printkey:
             print self.key
 
